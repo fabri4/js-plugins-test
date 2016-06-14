@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: normal;
+}
+
+@mixin centerer-translate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerer-stretch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+@mixin minw($px) {
+  @media screen and (min-width: $px+px) {
+    @content;
+  }
+}
+
+@mixin maxw($px) {
+  @media screen and (max-width: $px+px) {
+    @content;
+  }
+}
+
+@mixin minmax($pxmin, $pxmax) {
+  @media screen and (min-width: $pxmin+px) and (max-width: $pxmax+px) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10%;
+  @include minw(1000) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

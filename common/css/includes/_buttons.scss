@@ -1,0 +1,132 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.b-button,
+%b-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.3s ease-out;
+  behavior: url(js/css3pie/PIE.htc);
+}
+
+.btn--red {
+  background-color: $red;
+  color: $white;
+  
+  &:hover {
+    background-color: #ee4a17;
+  }
+}
+
+.btn--big {
+  padding: 8px 20px;
+  width: 217px;
+  font: 18px "Arial";
+  font-weight: bold;
+}
+
+.btn--add-to-cart {
+  @extend %b-button;
+  @extend .btn--red;
+  @extend .btn--big;
+  padding: 15px 20px 13px 77px;
+  text-align: left;
+}
+
+/*----------- #BACK TO TOP BUTTON ---------*/
+
+.scrollTop {
+  position: fixed;
+  bottom: 2%;
+  right: 0;
+  z-index: 9999;
+  height: 52px;
+  width: 46px;
+  text-decoration: none;
+  background: rgba(56,56,58,0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c38383A', endColorstr='#4c38383A'); /* IE */
+  border: 0;
+  border-radius: 8px 0 0 8px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  visibility: hidden;
+  behavior: url(js/css3pie/PIE.htc);
+
+  &:after,
+  &:before {
+    content: "";
+    @include centerer-stretch;
+    left: 50%;
+    width: 18px;
+    height: 4px;
+    background-color: #fff;
+  }
+  &:after {
+    margin-left: -3px;
+    transform: rotate(45deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; /* IE8 */
+  }
+  &:before {
+    margin-left: -13px;
+    transform: rotate(-45deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; /* IE8 */
+  }
+
+  &:hover {
+    background: #38383A;
+  }
+
+  &.is-shown {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+  }
+}
+
+// icons
+
+.icon--plus {
+  display: inline-block;
+  @include centerer-stretch;
+  left: 36px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid $white;
+  border-radius: 50%;
+  behavior: url(js/css3pie/PIE.htc);
+
+  &:after,
+  &:before {
+    content: "";
+    @include centerer-stretch;
+    left: 50%;
+    background-color: #fff;
+  }
+  &:after {
+    width: 14px;
+    height: 4px;
+    margin-left: -7px;
+  }
+  &:before {
+    width: 4px;
+    height: 14px;
+    margin-left: -2px;
+  }
+}
+
+@include minw(800) {
+  .btn--big {
+    width: 175px;
+    padding-left: 58px;
+  }
+
+  .icon--plus {
+    left: 18px;
+  }
+}

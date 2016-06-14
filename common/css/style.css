@@ -1,0 +1,222 @@
+/*------------------------------------*	$BASE
+\*------------------------------------*/
+/*------------------------------------*    $VARIABLES
+\*------------------------------------*/
+/*------------------------------------*    $RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+sub {
+  vertical-align: sub; }
+
+sup {
+  vertical-align: super; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/*------------------------------------*    $BUTTONS
+\*------------------------------------*/
+.b-button,
+.btn--add-to-cart {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  outline: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  behavior: url(js/css3pie/PIE.htc); }
+
+.btn--red, .btn--add-to-cart {
+  background-color: #d30202;
+  color: #ffffff; }
+  .btn--red:hover, .btn--add-to-cart:hover {
+    background-color: #ee4a17; }
+
+.btn--big, .btn--add-to-cart {
+  padding: 8px 20px;
+  width: 217px;
+  font: 18px "Arial";
+  font-weight: bold; }
+
+.btn--add-to-cart {
+  padding: 15px 20px 13px 77px;
+  text-align: left; }
+
+/*----------- #BACK TO TOP BUTTON ---------*/
+.scrollTop {
+  position: fixed;
+  bottom: 2%;
+  right: 0;
+  z-index: 9999;
+  height: 52px;
+  width: 46px;
+  text-decoration: none;
+  background: rgba(56, 56, 58, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c38383A', endColorstr='#4c38383A');
+  /* IE */
+  border: 0;
+  border-radius: 8px 0 0 8px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  visibility: hidden;
+  behavior: url(js/css3pie/PIE.htc); }
+  .scrollTop:after, .scrollTop:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 50%;
+    width: 18px;
+    height: 4px;
+    background-color: #fff; }
+  .scrollTop:after {
+    margin-left: -3px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
+    /* IE8 */ }
+  .scrollTop:before {
+    margin-left: -13px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
+    /* IE8 */ }
+  .scrollTop:hover {
+    background: #38383A; }
+  .scrollTop.is-shown {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible; }
+
+.icon--plus {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  left: 36px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  behavior: url(js/css3pie/PIE.htc); }
+  .icon--plus:after, .icon--plus:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 50%;
+    background-color: #fff; }
+  .icon--plus:after {
+    width: 14px;
+    height: 4px;
+    margin-left: -7px; }
+  .icon--plus:before {
+    width: 4px;
+    height: 14px;
+    margin-left: -2px; }
+
+@media screen and (min-width: 800px) {
+  .btn--big, .btn--add-to-cart {
+    width: 175px;
+    padding-left: 58px; }
+  .icon--plus {
+    left: 18px; } }
+
+/*------------------------------------*    $COMMON STYLES
+\*------------------------------------*/
+.clearfix {
+  *zoom: 1; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.page__wrapper {
+  width: 100%;
+  overflow: hidden; }
+
+/*------------------------------------*	$MAIN
+\*------------------------------------*/
+/*----------- #JS-TEST ---------*/
+#test .test_wrapper {
+  width: 100%;
+  overflow: hidden; }
+
+/*----------- #MAIN ---------*/
+.main__wrapper {
+  padding-bottom: 39px; }
+
+.main__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10%;
+  position: relative;
+  padding-top: 22px; }
+  @media screen and (min-width: 1000px) {
+    .main__container {
+      padding-left: 0;
+      padding-right: 0; } }
+
+@media screen and (min-width: 800px) {
+  .main__wrapper {
+    padding-bottom: 25px; } }

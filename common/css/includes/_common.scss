@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $COMMON STYLES
+\*------------------------------------*/
+
+.clearfix,
+%clearfix{
+  //IE fix
+  *zoom: 1;
+}
+.clearfix:after,
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page__wrapper {
+  width: 100%;
+  overflow: hidden;
+}

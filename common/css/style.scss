@@ -1,0 +1,34 @@
+/*------------------------------------*\
+	$MAIN
+\*------------------------------------*/
+
+/*----------- #JS-TEST ---------*/
+
+#test {
+  .test_wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/*----------- #MAIN ---------*/
+
+.main {
+  &__wrapper {
+    padding-bottom: 39px;
+  }
+    &__container {
+      @include container;
+      position: relative;
+      padding-top: 22px;
+    }
+}
+
+
+@include minw(800) {
+  .main {
+    &__wrapper {
+      padding-bottom: 25px;
+    }
+  }
+}
