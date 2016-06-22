@@ -144,6 +144,33 @@
 
       <h2><a name="hide-search-on-single-select" class="anchor" href="#hide-search-on-single-select">Hide Search on Single Select</a></h2>
       <div class="side-by-side clearfix">
+        <p><code>disable_search: true</code> When set to true, Chosen will not display the search field (single selects only).</p>
+        <pre><code class="language-javascript">$(".chosen-select").chosen({disable_search: true});</code></pre>
+        <p></p>
+        <div>
+          <select data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chosen-select-disable-search" tabindex="9">
+            <option value=""></option>
+            <option>American Black Bear</option>
+            <option>Asiatic Black Bear</option>
+            <option>Brown Bear</option>
+            <option>Giant Panda</option>
+            <option selected disabled>Sloth Bear</option>
+            <option disabled>Sun Bear</option>
+            <option selected disabled>Paddington Bear</option>
+            <option selected>Polar Bear</option>
+            <option disabled>Spectacled Bear</option>
+            <option>Brown Bear</option>
+            <option>Giant Panda</option>
+            <option selected disabled>Sloth Bear</option>
+            <option disabled>Sun Bear</option>
+            <option selected disabled>Paddington Bear</option>
+            <option selected>Polar Bear</option>
+            <option disabled>Spectacled Bear</option>
+          </select>
+        </div>
+
+        <br>
+        <br>
         <p>The <code>disable_search_threshold</code> option can be specified to hide the search input on single selects if there are <i>n</i> or fewer options.</p>
         <pre><code class="language-javascript">$(".chosen-select").chosen({disable_search_threshold: 10});</code></pre>
         <p></p>
@@ -164,10 +191,44 @@
       </div>
 
       <h2><a name="default-text-support" class="anchor" href="#default-text-support">Default Text Support</a></h2>
-      <div class="side-by-side clearfix">
+      <div class="clearfix">
         <p>Chosen automatically sets the default field text ("Choose a country...") by reading the select element's data-placeholder value. If no data-placeholder value is present, it will default to "Select an Option" or "Select Some Options" depending on whether the select is single or multiple. You can change these elements in the plugin js file as you see fit.</p>
         <pre><code class="language-markup">&lt;select <strong>data-placeholder="Choose a country..."</strong> style="width:350px;" multiple class="chosen-select"&gt;</code></pre>
         <p><strong>Note:</strong> on single selects, the first element is assumed to be selected by the browser. To take advantage of the default text support, you will need to include a blank option as the first element of your select list.</p>
+
+        <div>
+        <select class="chosen-select" style="width:350px;" data-placeholder="">
+            <option value=""></option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" disabled>Option 3</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <select class="chosen-select" style="width:350px;" data-placeholder="Hello! Choose something">
+            <option value=""></option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" disabled>Option 3</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <select class="chosen-select" style="width:350px;" data-placeholder="Select Your Options">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" disabled>Option 3</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <select class="chosen-select" style="width:350px;" data-placeholder="Select Your Options">
+            <option value="1">Option 1</option>
+            <option value="2" selected>Option 2</option>
+            <option value="3" disabled>Option 3</option>
+          </select>
+        </div>
       </div>
 
       <h2><a name="no-results-text-support" class="anchor" href="#no-results-text-support">No Results Text Support</a></h2>
@@ -211,6 +272,16 @@
         <pre><code class="language-javascript">$(".chosen-select").chosen({max_selected_options: 5});</code></pre>
         <p>If you try to select another option with limit reached <code class="language-javascript">chosen:maxselected</code> event is triggered:</p>
         <pre><code class="language-javascript"> $(".chosen-select").bind("chosen:maxselected", function () { ... }); </code></pre>
+
+        <div>
+          <select class="chosen-select-max-selected-options" style="width:350px;" multiple>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+          </select>
+        </div>
       </div>
 
       <h2><a name="allow-deselect-on-single-selects" class="anchor" href="#allow-deselect-on-single-selects">Allow Deselect on Single Selects</a></h2>
@@ -366,6 +437,8 @@
     var config = {
       '.chosen-select'           : {},
       '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-disable-search' : {disable_search: true},
+      '.chosen-select-max-selected-options' : {max_selected_options: 3},
       '.chosen-select-no-single' : {disable_search_threshold:10},
       '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
       '.chosen-select-width'     : {width:"95%"}
